@@ -1,18 +1,1943 @@
---[[
-    Protected & Encrypted MM2 Script
-    Security Level: High (String/Byte Mapping)
---]]
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local HttpService = game:GetService("HttpService")
 
-local _0x84A2 = "\76\111\99\97\108\32\80\108\97\121\101\114\115\32\61\32\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\34\80\108\97\121\101\114\115\34\41\10\108\111\99\97\108\32\82\117\110\83\101\114\118\105\99\101\32\61\32\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\34\82\117\110\83\101\114\118\105\99\101\34\41\10\108\111\99\97\108\32\85\115\101\114\73\110\112\117\100\83\101\114\118\105\99\101\32\61\32\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\34\85\115\101\114\73\110\112\117\116\83\101\114\118\105\99\101\34\41\10\108\111\99\97\108\32\87\111\114\108\100\83\112\97\99\101\32\61\32\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\34\87\111\114\108\100\83\112\97\99\101\34\41\10\108\111\99\97\108\32\82\101\112\108\105\99\97\100\101\100\83\112\97\99\101\32\61\32\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\34\82\101\112\108\105\99\97\100\101\100\83\112\97\99\101\34\41\10\108\111\99\97\108\32\72\116\116\112\83\101\114\118\105\99\101\32\61\32\103\97\109\101\58\71\101\116\83\101\114\118\105\99\101\40\34\72\116\116\112\83\101\114\118\105\99\101\34\41\10\10\108\111\99\97\108\32\76\111\99\97\108\80\108\97\121\101\114\32\61\32\80\108\97\121\101\114\115\46\76\111\99\97\108\80\108\97\121\101\114\10\10\105\102\32\103\97\109\101\46\80\108\97\99\101\73\100\32\126\61\32\49\52\50\56\50\51\50\57\49\32\116\104\101\110\10\32\32\32\32\76\111\99\97\108\80\108\97\121\101\114\58\75\105\99\107\40\34\73\110\99\111\114\114\101\99\116\32\80\108\97\99\101\73\100\46\32\80\108\101\97\115\101\32\106\111\105\110\32\77\77\50\46\34\41\10\32\32\32\32\114\101\116\117\114\110\10\101\110\100\10\10\108\111\99\97\108\32\67\97\109\101\114\97\32\61\32\87\111\114\108\100\83\112\97\99\101\46\67\117\114\114\101\110\116\67\97\109\101\114\97\10\108\111\99\97\108\32\117\105\76\111\99\107\101\100\32\61\32\102\97\108\115\101\10\108\111\99\97\108\32\99\111\110\102\105\103\68\97\116\97\32\61\32\123\125\10\108\111\99\97\108\32\116\111\103\103\108\101\67\97\108\108\98\97\99\107\115\32\61\32\123\125\10\108\111\99\97\108\32\116\111\103\103\108\101\83\116\97\116\101\115\32\61\32\123\125\10\108\111\99\97\108\32\97\99\116\105\118\101\67\117\115\116\111\109\70\111\110\116\32\61\32\69\110\117\109\46\70\111\110\116\46\71\111\116\104\97\109\66\111\108\100\10\10\108\111\99\97\108\32\102\117\110\99\116\105\111\110\32\103\101\116\80\97\114\101\110\116\40\41\10\32\32\32\32\105\102\32\103\101\116\104\117\105\32\116\104\101\110\10\32\32\32\32\32\32\32\32\108\111\99\97\108\32\115\117\99\99\101\115\115\44\32\114\101\115\32\61\32\112\99\97\108\108\40\103\101\116\104\117\105\41\10\32\32\32\32\32\32\32\32\105\102\32\115\117\99\99\101\115\115\32\97\110\100\32\114\101\115\32\116\104\101\110\32\114\101\116\117\114\110\32\114\101\115\32\101\110\100\10\32\32\32\32\101\110\100\10\32\32\32\32\114\101\116\117\114\110\32\76\111\99\97\108\80\108\97\121\101\114\58\87\97\105\116\70\111\114\67\104\105\108\100\40\34\80\108\97\121\101\114\71\117\105\34\41\10\101\110\100\10\10\108\111\99\97\108\32\112\97\114\101\110\116\67\111\110\116\97\105\110\101\114\32\61\32\103\101\116\80\97\114\101\110\116\40\41\10\105\102\32\112\97\114\101\110\116\67\111\110\116\97\105\110\101\114\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\84\114\121\83\99\114\105\112\116\72\117\98\34\41\32\116\104\101\110\10\32\32\32\32\112\97\114\101\110\116\67\111\110\116\97\105\110\101\114\46\84\114\121\83\99\114\105\112\116\72\117\98\58\68\101\115\116\114\111\121\40\41\10\101\110\100\10\10\108\111\99\97\108\32\83\99\114\101\101\110\71\117\105\32\61\32\73\110\115\116\97\110\99\101\46\110\101\119\40\34\83\99\114\101\101\110\71\117\105\34\41\10\83\99\114\101\101\110\71\117\105\46\78\97\109\101\32\61\32\34\84\114\121\83\99\114\105\112\116\72\117\98\34\10\83\99\114\101\101\110\71\117\105\46\82\101\115\101\116\79\110\83\112\97\119\110\32\61\32\102\97\108\115\101\10\83\99\114\101\101\110\71\117\105\46\68\105\115\112\108\97\121\79\114\100\101\114\32\61\32\57\57\57\57\10\83\99\114\101\101\110\71\117\105\46\80\97\114\101\110\116\32\61\32\112\97\114\101\110\116\67\111\110\116\97\105\110\101\114\10\10\108\111\99\97\108\32\102\117\110\99\116\105\111\110\32\103\101\116\82\111\108\101\40\112\108\97\121\101\114\41\10\32\32\32\32\105\102\32\110\111\116\32\112\108\97\121\101\114\32\116\104\101\110\32\114\101\116\117\114\110\32\34\73\110\110\111\99\101\110\116\34\32\101\110\100\10\32\32\32\32\108\111\99\97\108\32\115\117\99\99\101\115\115\44\32\112\108\97\121\101\114\68\97\116\97\32\61\32\112\99\97\108\108\40\102\117\110\99\116\105\111\110\40\41\10\32\32\32\32\32\32\32\32\108\111\99\97\108\32\114\101\109\111\116\101\32\61\32\82\101\112\108\105\99\97\100\101\100\83\112\97\99\101\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\71\101\116\80\108\97\121\101\114\68\97\116\97\34\44\32\116\114\117\101\41\10\32\32\32\32\32\32\32\32\105\102\32\114\101\109\111\116\101\32\116\104\101\110\32\114\101\116\117\114\110\32\114\101\116\111\114\110\32\114\101\109\111\116\101\58\73\110\118\111\107\101\83\101\114\118\101\114\40\41\32\101\110\100\10\32\32\32\32\101\110\100\41\10\32\32\32\32\10\32\32\32\32\105\102\32\115\117\99\99\101\115\115\32\97\110\100\32\116\121\112\101\40\112\108\97\121\101\114\68\97\116\97\41\32\61\61\32\34\116\97\98\108\101\34\32\97\110\100\32\112\108\97\121\101\114\68\97\116\97\91\112\108\97\121\101\114\46\78\97\109\101\93\32\116\104\101\110\10\32\32\32\32\32\32\32\32\108\111\99\97\108\32\114\111\108\101\32\61\32\112\108\97\121\101\114\68\97\116\97\91\112\108\97\121\101\114\46\78\97\109\101\93\46\82\111\108\101\10\32\32\32\32\32\32\32\32\105\102\32\114\111\108\101\32\61\61\32\34\77\117\114\100\101\114\101\114\34\32\111\114\32\114\111\115\101\32\61\61\32\34\83\104\101\114\105\102\102\34\32\111\114\32\114\111\108\101\32\61\61\32\34\72\101\114\111\34\32\116\104\101\110\10\32\32\32\32\32\32\32\32\32\32\32\32\114\101\116\117\114\110\32\114\111\108\101\32\61\61\32\34\72\101\114\111\34\32\97\110\100\32\34\83\104\101\114\105\102\102\34\32\111\114\32\114\111\108\101\10\32\32\32\32\32\32\32\32\101\110\100\10\32\32\32\32\101\110\100\10\32\32\32\32\10\32\32\32\32\108\111\99\97\108\32\98\112\32\61\32\112\108\97\121\101\114\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\66\97\99\107\112\97\99\107\34\41\10\32\32\32\32\108\111\99\97\108\32\99\104\32\61\32\112\108\97\121\101\114\46\67\104\97\114\97\99\116\101\114\10\32\32\32\32\105\102\32\40\98\112\32\97\110\100\32\98\112\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\75\110\105\102\101\34\41\41\32\111\114\32\40\99\104\32\97\110\100\32\99\104\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\75\110\105\102\101\34\41\41\32\116\104\101\110\10\32\32\32\32\32\32\32\32\114\101\116\117\114\110\32\34\77\117\114\100\101\114\101\114\34\10\32\32\32\32\101\108\115\101\105\102\32\40\98\112\32\97\110\100\32\98\112\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\71\117\110\34\41\41\32\111\114\32\40\99\104\32\97\110\100\32\99\104\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\71\117\110\34\41\41\32\116\104\101\110\10\32\32\32\32\32\32\32\32\114\101\116\117\114\110\32\34\83\104\101\114\105\102\102\34\10\32\32\32\32\101\110\100\10\32\32\32\32\114\101\116\117\114\110\32\34\73\110\110\101\99\101\110\116\34\10\101\110\100\10\10\108\111\99\97\108\32\102\117\110\99\116\105\111\110\32\103\101\116\82\111\108\101\67\111\108\111\114\40\114\111\108\101\41\10\32\32\32\32\105\102\32\114\111\108\101\32\61\61\32\34\77\117\114\100\101\114\101\114\34\32\116\104\101\110\32\114\101\116\117\114\110\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\50\53\53\44\32\52\48\44\32\52\48\41\32\101\110\100\10\32\32\32\32\105\102\32\114\111\108\101\32\61\61\32\34\83\104\101\114\105\102\102\34\32\116\104\101\110\32\114\101\116\117\114\110\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\52\48\44\32\49\50\48\44\32\50\53\53\41\32\101\110\100\10\32\32\32\32\114\101\116\117\114\110\32\67\111\108\111\114\51\46\102\114\111\109\82\71\66\40\52\48\44\32\50\53\53\44\32\52\57\48\41\10\101\110\100\10\10\82\117\110\83\101\114\118\105\99\101\46\82\101\110\100\101\114\83\116\101\112\112\101\100\58\67\111\110\110\101\99\116\40\102\117\110\99\116\105\111\110\40\41\10\32\32\32\32\108\111\99\97\108\32\99\104\97\114\32\61\32\76\111\99\97\108\80\108\97\121\101\114\46\67\104\97\114\97\99\116\101\114\10\32\32\32\32\105\102\32\110\111\116\32\99\104\97\114\32\116\104\101\110\32\114\101\116\117\114\110\32\101\110\100\10\32\32\32\32\108\111\99\97\108\32\104\114\112\32\61\32\99\104\97\114\58\70\105\110\100\70\105\114\115\116\67\104\105\108\100\40\34\72\117\109\97\110\111\105\100\82\111\111\116\80\97\114\116\34\41\10\32\32\32\32\10\32\32\32\32\105\102\32\116\111\103\103\108\101\83\116\97\116\101\115\91\34\78\111\99\108\105\112\34\93\32\116\104\101\110\10\32\32\32\32\32\32\32\32\102\111\114\32\95\44\32\112\97\114\116\32\105\110\32\105\112\97\105\114\115\40\99\104\97\114\58\71\101\116\68\101\115\99\101\110\100\97\110\116\115\40\41\41\32\100\111\10\32\32\32\32\32\32\32\32\32\32\32\32\105\102\32\112\97\114\116\58\73\115\65\40\34\66\97\115\101\80\97\114\116\34\41\32\116\104\101\110\10\32\32\32\32\32\32\32\32\32\32\32\32\32\32\32\32\112\97\114\116\46\67\97\110\67\111\108\108\105\100\101\32\61\32\102\97\108\115\101\10\32\32\32\32\32\32\32\32\32\32\32\32\101\110\100\10\32\32\32\32\32\32\32\32\101\110\100\10\32\32\32\32\101\110\100\10\101\110\100\41"
-local _0x3E1 = string.char
-local _0x99B = {}
+local LocalPlayer = Players.LocalPlayer
 
-for _0x1F2 in _0x84A2:gmatch("\\%d+") do
-    table.insert(_0x99B, _0x3E1(tonumber(_0x1F2:sub(2))))
+if game.PlaceId ~= 142823291 then
+    LocalPlayer:Kick("ЗАЙДИ В MM2 УЕБИЩЕ")
+    return
 end
 
-local _0xEE7 = table.concat(_0x99B)
-local _0xRUN = loadstring or load
-if _0xRUN then
-    return _0xRUN(_0xEE7)()
+local Camera = Workspace.CurrentCamera
+
+local uiLocked = false
+local configData = {}
+local toggleCallbacks = {}
+local toggleStates = {}
+local activeCustomFont = Enum.Font.GothamBold
+
+-- Ссылки на выпадающие списки
+local fontDropdownList
+local colorDropdownList
+local dropdownList
+
+-- Настройки Аимлока и Предикшена
+getgenv().TryAimSettings = {
+    AimlockSpeed = 0.25,     
+    PredictionSpeed = 0.135  
+}
+
+local function closeAllDropdowns()
+    if fontDropdownList then fontDropdownList.Visible = false end
+    if colorDropdownList then colorDropdownList.Visible = false end
+    if dropdownList then dropdownList.Visible = false end
 end
+
+local function getParent()
+    if gethui then
+        local success, res = pcall(gethui)
+        if success and res then return res end
+    end
+    return LocalPlayer:WaitForChild("PlayerGui")
+end
+
+local parentContainer = getParent()
+if parentContainer:FindFirstChild("TryScriptHub") then
+    parentContainer.TryScriptHub:Destroy()
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "TryScriptHub"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.DisplayOrder = 9999
+ScreenGui.Parent = parentContainer
+
+local function updateFontsRecursively(parent, fontEnum)
+    for _, child in pairs(parent:GetDescendants()) do
+        if child:IsA("TextButton") or child:IsA("TextLabel") or child:IsA("TextBox") then
+            if typeof(fontEnum) == "Font" then
+                child.FontFace = fontEnum
+            else
+                child.Font = fontEnum
+            end
+        end
+    end
+end
+
+local function makeDraggable(frame, checkLock)
+    local dragging = false
+    local dragStart, startPos
+
+    frame.InputBegan:Connect(function(input)
+        if checkLock and checkLock() then return end
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = frame.Position
+        end
+    end)
+
+    UserInputService.InputChanged:Connect(function(input)
+        if (checkLock and checkLock()) or not dragging then return end
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            local delta = input.Position - dragStart
+            frame.Position = UDim2.new(
+                startPos.X.Scale,
+                startPos.X.Offset + delta.X,
+                startPos.Y.Scale,
+                startPos.Y.Offset + delta.Y
+            )
+        end
+    end)
+
+    UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = false
+        end
+    end)
+end
+
+----------------------------------------------------
+-- 1. HUD & Main Frame
+----------------------------------------------------
+local TopButton = Instance.new("TextButton")
+TopButton.Name = "TopHUD"
+TopButton.Parent = ScreenGui
+TopButton.AnchorPoint = Vector2.new(0.5, 0)
+TopButton.Position = UDim2.new(0.5, 0, 0, 10)
+TopButton.Size = UDim2.new(0, 130, 0, 38)
+TopButton.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
+TopButton.Text = "Try Script"
+TopButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TopButton.TextSize = 13
+TopButton.Font = Enum.Font.GothamBold
+TopButton.ZIndex = 1000
+
+local UICornerHUD = Instance.new("UICorner")
+UICornerHUD.CornerRadius = UDim.new(0, 8)
+UICornerHUD.Parent = TopButton
+
+local HUDEffect = Instance.new("UIStroke")
+HUDEffect.Color = Color3.fromRGB(45, 45, 55)
+HUDEffect.Thickness = 1
+HUDEffect.Parent = TopButton
+
+local HUDScale = Instance.new("UIScale")
+HUDScale.Parent = TopButton
+HUDScale.Scale = 1.0
+
+makeDraggable(TopButton, function() return uiLocked end)
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MainFrame.Size = UDim2.new(0, 520, 0, 340)
+MainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 18)
+MainFrame.BorderSizePixel = 0
+MainFrame.Visible = false
+MainFrame.ZIndex = 100
+
+local MainScale = Instance.new("UIScale")
+MainScale.Parent = MainFrame
+MainScale.Scale = 1.0
+
+local MainCorner = Instance.new("UICorner")
+MainCorner.CornerRadius = UDim.new(0, 10)
+MainCorner.Parent = MainFrame
+
+local MainStroke = Instance.new("UIStroke")
+MainStroke.Color = Color3.fromRGB(35, 35, 45)
+MainStroke.Thickness = 1.5
+MainStroke.Parent = MainFrame
+
+local TopBar = Instance.new("Frame")
+TopBar.Parent = MainFrame
+TopBar.Size = UDim2.new(1, 0, 0, 36)
+TopBar.BackgroundTransparency = 1
+TopBar.ZIndex = 101
+
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Parent = TopBar
+TitleLabel.Position = UDim2.new(0, 14, 0, 0)
+TitleLabel.Size = UDim2.new(0.5, 0, 1, 0)
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Text = "Try Script Hub"
+TitleLabel.TextColor3 = Color3.fromRGB(240, 240, 250)
+TitleLabel.TextSize = 13
+TitleLabel.Font = Enum.Font.GothamBold
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+TitleLabel.ZIndex = 102
+
+local Sidebar = Instance.new("ScrollingFrame")
+Sidebar.Name = "Sidebar"
+Sidebar.Parent = MainFrame
+Sidebar.Position = UDim2.new(0, 10, 0, 42)
+Sidebar.Size = UDim2.new(0, 120, 1, -52)
+Sidebar.BackgroundColor3 = Color3.fromRGB(20, 20, 24)
+Sidebar.BorderSizePixel = 0
+Sidebar.ZIndex = 101
+Sidebar.CanvasSize = UDim2.new(0, 0, 0, 0)
+Sidebar.ScrollBarThickness = 2
+
+local SidebarCorner = Instance.new("UICorner")
+SidebarCorner.CornerRadius = UDim.new(0, 8)
+SidebarCorner.Parent = Sidebar
+
+local SidebarList = Instance.new("UIListLayout")
+SidebarList.Parent = Sidebar
+SidebarList.SortOrder = Enum.SortOrder.LayoutOrder
+SidebarList.Padding = UDim.new(0, 4)
+
+SidebarList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+    Sidebar.CanvasSize = UDim2.new(0, 0, 0, SidebarList.AbsoluteContentSize.Y + 10)
+end)
+
+local ContentArea = Instance.new("Frame")
+ContentArea.Name = "ContentArea"
+ContentArea.Parent = MainFrame
+ContentArea.Position = UDim2.new(0, 138, 0, 42)
+ContentArea.Size = UDim2.new(1, -148, 1, -52)
+ContentArea.BackgroundTransparency = 1
+ContentArea.ZIndex = 101
+
+----------------------------------------------------
+-- 2. Pages & Search Registry
+----------------------------------------------------
+local pages = {}
+local allSearchableElements = {}
+
+local function createPage(name)
+    local page = Instance.new("ScrollingFrame")
+    page.Name = name .. "Page"
+    page.Parent = ContentArea
+    page.Size = UDim2.new(1, 0, 1, 0)
+    page.BackgroundTransparency = 1
+    page.BorderSizePixel = 0
+    page.Visible = false
+    page.ScrollBarThickness = 3
+    page.ZIndex = 102
+    page.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+    local layout = Instance.new("UIListLayout")
+    layout.Parent = page
+    layout.SortOrder = Enum.SortOrder.LayoutOrder
+    layout.Padding = UDim.new(0, 6)
+
+    layout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        page.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y + 10)
+    end)
+
+    local btn = Instance.new("TextButton")
+    btn.Parent = Sidebar
+    btn.Size = UDim2.new(1, -4, 0, 28)
+    btn.BackgroundColor3 = Color3.fromRGB(20, 20, 24)
+    btn.Text = name
+    btn.TextColor3 = Color3.fromRGB(140, 140, 155)
+    btn.TextSize = 11
+    btn.Font = Enum.Font.GothamBold
+    btn.ZIndex = 102
+
+    local btnCorner = Instance.new("UICorner")
+    btnCorner.CornerRadius = UDim.new(0, 6)
+    btnCorner.Parent = btn
+
+    btn.MouseButton1Click:Connect(function()
+        closeAllDropdowns()
+
+        for _, p in pairs(pages) do
+            p.page.Visible = false
+            p.btn.BackgroundColor3 = Color3.fromRGB(20, 20, 24)
+            p.btn.TextColor3 = Color3.fromRGB(140, 140, 155)
+        end
+        page.Visible = true
+        btn.BackgroundColor3 = Color3.fromRGB(45, 45, 60)
+        btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    end)
+
+    pages[name] = {page = page, btn = btn}
+    return page
+end
+
+local combatPage = createPage("Combat")
+local playerPage = createPage("Player")
+local animsEmotesPage = createPage("Anim & Emotes")
+local trollPage = createPage("Troll fun")
+local imagePage = createPage("Image Import")
+local fontsPage = createPage("Fonts")
+local miscPage = createPage("Misc")
+local uiPage = createPage("UI")
+local configsPage = createPage("Configs")
+local searchPage = createPage("Search")
+
+pages["Combat"].page.Visible = true
+pages["Combat"].btn.BackgroundColor3 = Color3.fromRGB(45, 45, 60)
+pages["Combat"].btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+----------------------------------------------------
+-- 3. UI Elements & Search Registration
+----------------------------------------------------
+local function registerSearchable(name, elementClone)
+    table.insert(allSearchableElements, {Name = string.lower(name), Element = elementClone})
+end
+
+local function addToggle(page, text, callback)
+    local btn = Instance.new("TextButton")
+    btn.Parent = page
+    btn.Size = UDim2.new(1, -6, 0, 34)
+    btn.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+    btn.Text = "  " .. text
+    btn.TextColor3 = Color3.fromRGB(230, 230, 240)
+    btn.TextSize = 11
+    btn.Font = Enum.Font.GothamBold
+    btn.TextXAlignment = Enum.TextXAlignment.Left
+    btn.ZIndex = 103
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+
+    local status = Instance.new("Frame")
+    status.Parent = btn
+    status.AnchorPoint = Vector2.new(1, 0.5)
+    status.Position = UDim2.new(1, -10, 0.5, 0)
+    status.Size = UDim2.new(0, 14, 0, 14)
+    status.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+    status.ZIndex = 104
+
+    local sCorner = Instance.new("UICorner")
+    sCorner.CornerRadius = UDim.new(0, 4)
+    sCorner.Parent = status
+
+    toggleStates[text] = false
+    toggleCallbacks[text] = function(state)
+        toggleStates[text] = state
+        status.BackgroundColor3 = state and Color3.fromRGB(60, 200, 100) or Color3.fromRGB(40, 40, 50)
+        callback(state)
+    end
+
+    btn.MouseButton1Click:Connect(function()
+        local newState = not toggleStates[text]
+        toggleCallbacks[text](newState)
+    end)
+    
+    registerSearchable(text, btn)
+end
+
+local function addButton(page, text, callback)
+    local btn = Instance.new("TextButton")
+    btn.Parent = page
+    btn.Size = UDim2.new(1, -6, 0, 34)
+    btn.BackgroundColor3 = Color3.fromRGB(28, 28, 36)
+    btn.Text = text
+    btn.TextColor3 = Color3.fromRGB(230, 230, 240)
+    btn.TextSize = 11
+    btn.Font = Enum.Font.GothamBold
+    btn.ZIndex = 103
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+
+    btn.MouseButton1Click:Connect(function()
+        btn.BackgroundColor3 = Color3.fromRGB(50, 160, 90)
+        task.spawn(function()
+            callback()
+            task.wait(0.3)
+            btn.BackgroundColor3 = Color3.fromRGB(28, 28, 36)
+        end)
+    end)
+    
+    registerSearchable(text, btn)
+end
+
+local function addInput(page, text, defaultVal, callback)
+    local frame = Instance.new("Frame")
+    frame.Parent = page
+    frame.Size = UDim2.new(1, -6, 0, 34)
+    frame.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+    frame.ZIndex = 103
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = frame
+
+    local label = Instance.new("TextLabel")
+    label.Parent = frame
+    label.Position = UDim2.new(0, 10, 0, 0)
+    label.Size = UDim2.new(0.6, 0, 1, 0)
+    label.BackgroundTransparency = 1
+    label.Text = text
+    label.TextColor3 = Color3.fromRGB(230, 230, 240)
+    label.TextSize = 11
+    label.Font = Enum.Font.GothamBold
+    label.TextXAlignment = Enum.TextXAlignment.Left
+    label.ZIndex = 104
+
+    local input = Instance.new("TextBox")
+    input.Parent = frame
+    input.AnchorPoint = Vector2.new(1, 0.5)
+    input.Position = UDim2.new(1, -8, 0.5, 0)
+    input.Size = UDim2.new(0, 65, 0, 22)
+    input.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
+    input.Text = tostring(defaultVal)
+    input.TextColor3 = Color3.fromRGB(230, 230, 240)
+    input.TextSize = 11
+    input.Font = Enum.Font.GothamBold
+    input.ZIndex = 104
+
+    local iCorner = Instance.new("UICorner")
+    iCorner.CornerRadius = UDim.new(0, 4)
+    iCorner.Parent = input
+
+    input:GetPropertyChangedSignal("Text"):Connect(function()
+        local num = tonumber(input.Text)
+        if num then callback(num) end
+    end)
+    
+    registerSearchable(text, frame)
+end
+
+----------------------------------------------------
+-- SEARCH TAB LOGIC
+----------------------------------------------------
+local searchBox = Instance.new("TextBox")
+searchBox.Parent = searchPage
+searchBox.Size = UDim2.new(1, -6, 0, 34)
+searchBox.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+searchBox.Text = ""
+searchBox.PlaceholderText = "🔍 Type to search any function..."
+searchBox.TextColor3 = Color3.fromRGB(230, 230, 240)
+searchBox.TextSize = 11
+searchBox.Font = Enum.Font.GothamBold
+searchBox.ZIndex = 103
+
+local sbCorner = Instance.new("UICorner")
+sbCorner.CornerRadius = UDim.new(0, 6)
+sbCorner.Parent = searchBox
+
+local resultsContainer = Instance.new("ScrollingFrame")
+resultsContainer.Parent = searchPage
+resultsContainer.Size = UDim2.new(1, -6, 1, -44)
+resultsContainer.BackgroundTransparency = 1
+resultsContainer.BorderSizePixel = 0
+resultsContainer.ScrollBarThickness = 3
+resultsContainer.ZIndex = 102
+resultsContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+local resultsLayout = Instance.new("UIListLayout")
+resultsLayout.Parent = resultsContainer
+resultsLayout.SortOrder = Enum.SortOrder.LayoutOrder
+resultsLayout.Padding = UDim.new(0, 6)
+
+resultsLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+    resultsContainer.CanvasSize = UDim2.new(0, 0, 0, resultsLayout.AbsoluteContentSize.Y + 10)
+end)
+
+searchBox:GetPropertyChangedSignal("Text"):Connect(function()
+    local query = string.lower(searchBox.Text)
+    
+    for _, child in pairs(resultsContainer:GetChildren()) do
+        if child:IsA("GuiObject") and child ~= resultsLayout then
+            child:Destroy()
+        end
+    end
+    
+    if query == "" then return end
+    
+    for _, item in ipairs(allSearchableElements) do
+        if string.find(item.Name, query) then
+            local clone = item.Element:Clone()
+            clone.Parent = resultsContainer
+            clone.Visible = true
+        end
+    end
+end)
+
+----------------------------------------------------
+-- 4. Utility Functions & Safe Fling
+----------------------------------------------------
+TopButton.MouseButton1Click:Connect(function()
+    MainFrame.Visible = not MainFrame.Visible
+    if not MainFrame.Visible then
+        closeAllDropdowns()
+    end
+end)
+
+local function grabGun()
+    local char = LocalPlayer.Character
+    if not char then return end
+    local hrp = char:FindFirstChild("HumanoidRootPart")
+    if not hrp then return end
+
+    local oldPos = hrp.CFrame
+    local gunTarget = nil
+
+    for _, obj in pairs(Workspace:GetDescendants()) do
+        if obj.Name == "Gun" or obj.Name == "GunDrop" then
+            if obj:IsA("BasePart") then
+                gunTarget = obj
+                break
+            elseif obj:IsA("Model") and obj.PrimaryPart then
+                gunTarget = obj.PrimaryPart
+                break
+            else
+                local part = obj:FindFirstChildWhichIsA("BasePart")
+                if part then
+                    gunTarget = part
+                    break
+                end
+            end
+        end
+    end
+
+    if gunTarget then
+        hrp.CFrame = gunTarget.CFrame + Vector3.new(0, 0.5, 0)
+        
+        task.spawn(function()
+            for i = 1, 5 do
+                if gunTarget and gunTarget.Parent then
+                    if firetouchinterest then
+                        firetouchinterest(hrp, gunTarget, 0)
+                        firetouchinterest(hrp, gunTarget, 1)
+                    end
+                end
+                task.wait(0.05)
+            end
+        end)
+        
+        task.wait(0.15)
+        hrp.CFrame = oldPos
+    end
+end
+
+local function getRole(player)
+    if not player then return "Innocent" end
+    local success, playerData = pcall(function()
+        local remote = ReplicatedStorage:FindFirstChild("GetPlayerData", true)
+        if remote then return remote:InvokeServer() end
+    end)
+    if success and type(playerData) == "table" and playerData[player.Name] then
+        local role = playerData[player.Name].Role
+        if role == "Murderer" or role == "Sheriff" or role == "Hero" then
+            return role == "Hero" and "Sheriff" or role
+        end
+    end
+    local bp = player:FindFirstChild("Backpack")
+    local ch = player.Character
+    if (bp and bp:FindFirstChild("Knife")) or (ch and ch:FindFirstChild("Knife")) then
+        return "Murderer"
+    elseif (bp and bp:FindFirstChild("Gun")) or (ch and ch:FindFirstChild("Gun")) then
+        return "Sheriff"
+    end
+    return "Innocent"
+end
+
+local function getRoleColor(role)
+    if role == "Murderer" then return Color3.fromRGB(255, 40, 40) end
+    if role == "Sheriff" then return Color3.fromRGB(40, 120, 255) end
+    return Color3.fromRGB(40, 255, 120)
+end
+
+local function getPlayerByRole(targetRole)
+    for _, p in pairs(Players:GetPlayers()) do
+        if p ~= LocalPlayer and getRole(p) == targetRole then return p end
+    end
+    return nil
+end
+
+local antiFlingEnabled = false
+
+local function safeFling(targetPlayer)
+    if not targetPlayer or not targetPlayer.Character then return end
+    local targetHrp = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+    local myChar = LocalPlayer.Character
+    local myHrp = myChar and myChar:FindFirstChild("HumanoidRootPart")
+    local myHum = myChar and myChar:FindFirstChildOfClass("Humanoid")
+    
+    if not targetHrp or not myHrp or not myHum then return end
+    
+    local startCFrame = myHrp.CFrame
+    myHum.PlatformStand = true
+    
+    local bav = Instance.new("BodyAngularVelocity")
+    bav.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+    bav.AngularVelocity = Vector3.new(0, 99999, 0)
+    bav.Parent = myHrp
+    
+    local bv = Instance.new("BodyVelocity")
+    bv.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+    bv.Velocity = Vector3.new(0, 0, 0)
+    bv.Parent = myHrp
+    
+    local startTime = tick()
+    while tick() - startTime < 0.6 do
+        if not targetHrp or not targetHrp.Parent or not myHrp or not myHrp.Parent then break end
+        myHrp.CFrame = targetHrp.CFrame * CFrame.new(math.random(-0.5, 0.5), 0, math.random(-0.5, 0.5))
+        bv.Velocity = Vector3.new(math.random(-500, 500), 5000, math.random(-500, 500))
+        RunService.Heartbeat:Wait()
+    end
+    
+    if bav then bav:Destroy() end
+    if bv then bv:Destroy() end
+    
+    myHrp.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+    myHrp.AssemblyAngularVelocity = Vector3.new(0, 0, 0)
+    myHum.PlatformStand = false
+    myHrp.CFrame = startCFrame
+end
+
+----------------------------------------------------
+-- 5. ANIMATIONS & EMOTES TAB (FIXED)
+----------------------------------------------------
+local subNavFrame = Instance.new("Frame")
+subNavFrame.Parent = animsEmotesPage
+subNavFrame.Size = UDim2.new(1, -6, 0, 32)
+subNavFrame.BackgroundTransparency = 1
+subNavFrame.ZIndex = 103
+
+local subNavLayout = Instance.new("UIListLayout")
+subNavLayout.Parent = subNavFrame
+subNavLayout.FillDirection = Enum.FillDirection.Horizontal
+subNavLayout.SortOrder = Enum.SortOrder.LayoutOrder
+subNavLayout.Padding = UDim.new(0, 6)
+
+local animsSubContainer = Instance.new("ScrollingFrame")
+animsSubContainer.Parent = animsEmotesPage
+animsSubContainer.Size = UDim2.new(1, -6, 1, -40)
+animsSubContainer.BackgroundTransparency = 1
+animsSubContainer.BorderSizePixel = 0
+animsSubContainer.Visible = true
+animsSubContainer.ScrollBarThickness = 3
+animsSubContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+local animsSubLayout = Instance.new("UIListLayout")
+animsSubLayout.Parent = animsSubContainer
+animsSubLayout.SortOrder = Enum.SortOrder.LayoutOrder
+animsSubLayout.Padding = UDim.new(0, 6)
+animsSubLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+    animsSubContainer.CanvasSize = UDim2.new(0, 0, 0, animsSubLayout.AbsoluteContentSize.Y + 10)
+end)
+
+local emotesSubContainer = Instance.new("ScrollingFrame")
+emotesSubContainer.Parent = animsEmotesPage
+emotesSubContainer.Size = UDim2.new(1, -6, 1, -40)
+emotesSubContainer.BackgroundTransparency = 1
+emotesSubContainer.BorderSizePixel = 0
+emotesSubContainer.Visible = false
+emotesSubContainer.ScrollBarThickness = 3
+emotesSubContainer.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+local emotesSubLayout = Instance.new("UIListLayout")
+emotesSubLayout.Parent = emotesSubContainer
+emotesSubLayout.SortOrder = Enum.SortOrder.LayoutOrder
+emotesSubLayout.Padding = UDim.new(0, 6)
+emotesSubLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+    emotesSubContainer.CanvasSize = UDim2.new(0, 0, 0, emotesSubLayout.AbsoluteContentSize.Y + 10)
+end)
+
+local function createSubTabBtn(name, isDefault, containerToShow)
+    local btn = Instance.new("TextButton")
+    btn.Parent = subNavFrame
+    btn.Size = UDim2.new(0.48, 0, 1, 0)
+    btn.BackgroundColor3 = isDefault and Color3.fromRGB(45, 45, 60) or Color3.fromRGB(22, 22, 28)
+    btn.Text = name
+    btn.TextColor3 = isDefault and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(140, 140, 155)
+    btn.TextSize = 11
+    btn.Font = Enum.Font.GothamBold
+    btn.ZIndex = 104
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+
+    btn.MouseButton1Click:Connect(function()
+        for _, child in pairs(subNavFrame:GetChildren()) do
+            if child:IsA("TextButton") then
+                child.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+                child.TextColor3 = Color3.fromRGB(140, 140, 155)
+            end
+        end
+        btn.BackgroundColor3 = Color3.fromRGB(45, 45, 60)
+        btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+        animsSubContainer.Visible = (containerToShow == animsSubContainer)
+        emotesSubContainer.Visible = (containerToShow == emotesSubContainer)
+    end)
+    return btn
+end
+
+createSubTabBtn("Animation Packs", true, animsSubContainer)
+createSubTabBtn("Emotes", false, emotesSubContainer)
+
+-- Надежный фикс применения аним паков и сброса
+local function applyAnimationPack(ids)
+    pcall(function()
+        local char = LocalPlayer.Character
+        if not char then return end
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if hum then
+            local animator = hum:FindFirstChildOfClass("Animator")
+            if animator then
+                for _, track in ipairs(animator:GetPlayingAnimationTracks()) do
+                    track:Stop(0)
+                    track:Destroy()
+                end
+            end
+        end
+
+        local animate = char:FindFirstChild("Animate")
+        if animate then
+            animate.Disabled = true
+            for _, animObj in pairs(animate:GetDescendants()) do
+                if animObj:IsA("StringValue") then
+                    if ids[animObj.Name] then
+                        for _, idVal in pairs(animObj:GetChildren()) do
+                            if idVal:IsA("Animation") then
+                                idVal.AnimationId = ids[animObj.Name]
+                            end
+                        end
+                    end
+                end
+            end
+            animate.Disabled = false
+        end
+    end)
+end
+
+local animPacks = {
+    ["Cartoon Pack"] = {
+        walk = "rbxassetid://742637505",
+        run = "rbxassetid://742638842",
+        jump = "rbxassetid://742637951",
+        fall = "rbxassetid://742637151",
+        idle = "rbxassetid://742639147",
+        swim = "rbxassetid://742638379"
+    },
+    ["Ninja Pack"] = {
+        walk = "rbxassetid://656121766",
+        run = "rbxassetid://656118777",
+        jump = "rbxassetid://656117878",
+        fall = "rbxassetid://656115606",
+        idle = "rbxassetid://656111134",
+        swim = "rbxassetid://656113885"
+    },
+    ["Zombie Pack"] = {
+        walk = "rbxassetid://616158038",
+        run = "rbxassetid://616163682",
+        jump = "rbxassetid://616161997",
+        fall = "rbxassetid://616157476",
+        idle = "rbxassetid://616158929",
+        swim = "rbxassetid://616160359"
+    },
+    ["Vampire Pack"] = {
+        walk = "rbxassetid://1083178859",
+        run = "rbxassetid://1083216690",
+        jump = "rbxassetid://1083218792",
+        fall = "rbxassetid://1083214706",
+        idle = "rbxassetid://1083197469",
+        swim = "rbxassetid://1083220452"
+    },
+    ["Elder Pack"] = {
+        walk = "rbxassetid://845397899",
+        run = "rbxassetid://845404149",
+        jump = "rbxassetid://845399586",
+        fall = "rbxassetid://845396167",
+        idle = "rbxassetid://845398636",
+        swim = "rbxassetid://845401349"
+    }
+}
+
+for packName, packIds in pairs(animPacks) do
+    addButton(animsSubContainer, "Equip " .. packName, function()
+        applyAnimationPack(packIds)
+    end)
+end
+
+-- Полный сброс анимаций, очищающий память и возвращающий дефолт
+addButton(animsSubContainer, "Reset to Default Animations", function()
+    pcall(function()
+        local char = LocalPlayer.Character
+        if not char then return end
+        
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if hum then
+            local animator = hum:FindFirstChildOfClass("Animator")
+            if animator then
+                for _, track in ipairs(animator:GetPlayingAnimationTracks()) do
+                    track:Stop(0)
+                    track:Destroy()
+                end
+            end
+        end
+
+        local animate = char:FindFirstChild("Animate")
+        if animate then
+            animate.Disabled = true
+            task.wait(0.05)
+            animate.Disabled = false
+        else
+            -- Если по какой-то причине скрипта Animate не было, заставим персонажа переродиться локально или обновим хьюманиод
+            local currentHrp = char:FindFirstChild("HumanoidRootPart")
+            if currentHrp then
+                local pos = currentHrp.CFrame
+                LocalPlayer.Character = nil
+                task.wait(0.1)
+                LocalPlayer.Character = char
+                currentHrp.CFrame = pos
+            end
+        end
+    end)
+end)
+
+addButton(emotesSubContainer, "Play Dance (Default)", function()
+    pcall(function()
+        local anim = Instance.new("Animation")
+        anim.AnimationId = "rbxassetid://333804435"
+        local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if hum then
+            local track = hum:LoadAnimation(anim)
+            track:Play()
+        end
+    end)
+end)
+
+addButton(emotesSubContainer, "Play Ninja Spin", function()
+    pcall(function()
+        local anim = Instance.new("Animation")
+        anim.AnimationId = "rbxassetid://656118852"
+        local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if hum then
+            local track = hum:LoadAnimation(anim)
+            track:Play()
+        end
+    end)
+end)
+
+addButton(emotesSubContainer, "Play Levitate / Float", function()
+    pcall(function()
+        local anim = Instance.new("Animation")
+        anim.AnimationId = "rbxassetid://357671134"
+        local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if hum then
+            local track = hum:LoadAnimation(anim)
+            track:Play()
+        end
+    end)
+end)
+
+addButton(emotesSubContainer, "Stop All Emotes", function()
+    pcall(function()
+        local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if hum then
+            for _, track in pairs(hum:GetPlayingAnimationTracks()) do
+                track:Stop()
+            end
+        end
+    end)
+end)
+
+----------------------------------------------------
+-- 6. IMAGE IMPORT
+----------------------------------------------------
+local imageLocked = false
+local imageFrame = Instance.new("ImageLabel")
+imageFrame.Name = "CustomImageDisplay"
+imageFrame.Parent = ScreenGui
+imageFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+imageFrame.Position = UDim2.new(0.5, 0, 0.3, 0)
+imageFrame.Size = UDim2.new(0, 200, 0, 140)
+imageFrame.BackgroundTransparency = 1
+imageFrame.Image = ""
+imageFrame.Visible = false
+imageFrame.ZIndex = 800
+
+local imgCorner = Instance.new("UICorner")
+imgCorner.CornerRadius = UDim.new(0, 8)
+imgCorner.Parent = imageFrame
+makeDraggable(imageFrame, function() return imageLocked end)
+
+local warningGui = Instance.new("ScreenGui")
+warningGui.Name = "BarniWarningGui"
+warningGui.ResetOnSpawn = false
+warningGui.DisplayOrder = 100000
+warningGui.Parent = parentContainer
+
+local warningLabel = Instance.new("TextLabel")
+warningLabel.Parent = warningGui
+warningLabel.Size = UDim2.new(1, 0, 1, 0)
+warningLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+warningLabel.BackgroundTransparency = 0.2
+warningLabel.Text = "ХАХАХАХА БАРНИ ДЛЯ НЕГО ЕТО ДЕНЬГИ"
+warningLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+warningLabel.TextSize = 28
+warningLabel.Font = Enum.Font.GothamBold
+warningLabel.TextScaled = true
+warningLabel.Visible = false
+warningLabel.ZIndex = 99999
+
+local function checkAndTriggerContent(urlText)
+    local lowerText = string.lower(urlText)
+    local restrictedWords = {"18+", "nsfw", "porn", "xxx", "adult", "nigger", "negro", "negr", "nigga", "black", "sex"}
+    for _, word in ipairs(restrictedWords) do
+        if string.find(lowerText, word) then
+            warningLabel.Visible = true
+            imageFrame.Visible = false
+            task.delay(4, function() warningLabel.Visible = false end)
+            return false
+        end
+    end
+    return true
+end
+
+addToggle(imagePage, "Toggle Display Image", function(state)
+    imageFrame.Visible = state and warningLabel.Visible == false
+end)
+addToggle(imagePage, "Lock Image Movement", function(state) imageLocked = state end)
+addInput(imagePage, "Image Width (X)", 200, function(val)
+    imageFrame.Size = UDim2.new(0, val, 0, imageFrame.Size.Y.Offset)
+end)
+addInput(imagePage, "Image Height (Y)", 140, function(val)
+    imageFrame.Size = UDim2.new(0, imageFrame.Size.X.Offset, 0, val)
+end)
+
+local imageLinkInput = Instance.new("TextBox")
+imageLinkInput.Parent = imagePage
+imageLinkInput.Size = UDim2.new(1, -6, 0, 32)
+imageLinkInput.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+imageLinkInput.Text = ""
+imageLinkInput.PlaceholderText = "Paste image link here..."
+imageLinkInput.TextColor3 = Color3.fromRGB(230, 230, 240)
+imageLinkInput.TextSize = 11
+imageLinkInput.Font = Enum.Font.GothamBold
+imageLinkInput.ZIndex = 103
+
+local ilCorner = Instance.new("UICorner")
+ilCorner.CornerRadius = UDim.new(0, 6)
+ilCorner.Parent = imageLinkInput
+
+local loadImageBtn = Instance.new("TextButton")
+loadImageBtn.Parent = imagePage
+loadImageBtn.Size = UDim2.new(1, -6, 0, 34)
+loadImageBtn.BackgroundColor3 = Color3.fromRGB(50, 160, 90)
+loadImageBtn.Text = "Load Image"
+loadImageBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+loadImageBtn.TextSize = 11
+loadImageBtn.Font = Enum.Font.GothamBold
+loadImageBtn.ZIndex = 103
+
+local libCorner = Instance.new("UICorner")
+libCorner.CornerRadius = UDim.new(0, 6)
+libCorner.Parent = loadImageBtn
+
+loadImageBtn.MouseButton1Click:Connect(function()
+    local txt = imageLinkInput.Text
+    if txt ~= "" then
+        if not checkAndTriggerContent(txt) then return end
+        if txt:find("http://") or txt:find("https://") then
+            local req = (syn and syn.request) or (http and http.request) or http_request or request
+            if req and writefile and getcustomasset then
+                task.spawn(function()
+                    local file = "custom_img_" .. tostring(math.random(1000, 9999)) .. ".png"
+                    local res = req({Url = txt, Method = "GET"})
+                    if res and res.Body then
+                        writefile(file, res.Body)
+                        imageFrame.Image = getcustomasset(file)
+                        imageFrame.Visible = true
+                    end
+                end)
+            end
+        else
+            local cleanId = txt:match("%d+")
+            if cleanId then
+                imageFrame.Image = "rbxassetid://" .. cleanId
+                imageFrame.Visible = true
+            end
+        end
+    end
+end)
+
+----------------------------------------------------
+-- 7. FONTS TAB
+----------------------------------------------------
+local starbornFontObj = nil
+if writefile and getcustomasset and Font and Font.fromCustomAsset then
+    pcall(function()
+        local fontBytes = [[DSIG GDEF GPOS GSUBl  OS/2DS `cmap gasp glyf head 6hhea $hmtx Dkern locaR maxp  name ^postz HL   #"'&' &'&54767&= 6763'& 47676; Hqw1 >&fH [>.# 8=IZ# 54%2= 4'#&= 4%676; 32654& :XKF 6KK65LL KQuyM 4$%33%$4 #"'"'5$56; $5&%&'&547 emY# 01!" y Iq #*?+J 3$56; #"'# 475&= t3|F/ RT~: #"'"' r9G^ 5&'&54 #"'#"'&547&= #"'47' 4%25 $563$ #"'&' &'&54767&= 6763 Hqw1 >&fH 32654& $F/UN: $5&= "'4%$ 4 &oc '5472 3$75&# 4%7' Wp)c >|## 327632 "'5' 2754'# '&5 325&+ "'54 5"5"  '&= &'67&= 32767654'&'&#" 32654& _cJG*! >YY>?XX 6S;:SS:;S "'565&# 'Rx7 jO1: "'56 [eJF "'54%54'&= VF|> rT8] %75&#" #"'54 #"'&' &'&54767&= 6763 &tT3 Hqw1 sQ;# >&fH $5472 654'#" 32%2 !# '$ ;Byx )/=gT8 #&'54 !$'&54767&5 3 7654'&#" 7654'&#" ToH[ i)RGw `2084! "'&+ 32%6; # 547 #"'&#" 327632 !"'$ &547&5 %$32 E[$QSP21K\?G G:W;< "'"'" 365$= 5&#" 5#"'&547 7632 :1W?c #"'4 $'&5476; 32767654'#$= P^hR RS!!s# # '&= #"'&547 27632 sc5M@Q 5476 32654& #"'54%6 # #+ :uz5 32654& #"'& $5&%&'&547 emY# 01!" y Iq #*?+J 3276 "'4# '632 3632 &56; hhS# #$#" #"'4%6 uO`F{?Q iFRF !#"'4%2 5'#"'56 #"'4%$ 367632 8INmY #"'&54767&5476 HHrw11 @R^# >'fI= '674'&#" u/ U O]:4) =#R\ 3763 #"'#" 7'&54732 F_-#] &54? &54? &54? [_23 [_23 \_13 [_23 [_22 [_23 [_22 [_23 [_13 27272 4'&547 #>ZX k![l 5674 0Made with Scanahand. Copyright   Darrell Flood 2018. All Rights Reserved.RegularStarborn:Version 1.00Version 1.00 June 23, 2018, initial release Euro latn kern latn]]
+        local fileName = "Starborn_Embedded.ttf"
+        writefile(fileName, fontBytes)
+        starbornFontObj = Font.fromCustomAsset(getcustomasset(fileName))
+    end)
+end
+
+local availableFonts = {
+    ["Gotham Bold"] = Enum.Font.GothamBold,
+    ["Starborn (Custom)"] = starbornFontObj or Enum.Font.Code,
+    ["Code / Monospace"] = Enum.Font.Code,
+    ["Source Sans Bold"] = Enum.Font.SourceSansBold,
+    ["SciFi / Legacy"] = Enum.Font.SciFi,
+    ["Antique"] = Enum.Font.Antique,
+    ["Bangers"] = Enum.Font.Bangers
+}
+
+local fontDropdownFrame = Instance.new("Frame")
+fontDropdownFrame.Parent = fontsPage
+fontDropdownFrame.Size = UDim2.new(1, -6, 0, 34)
+fontDropdownFrame.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+fontDropdownFrame.ZIndex = 103
+
+local fdCorner = Instance.new("UICorner")
+fdCorner.CornerRadius = UDim.new(0, 6)
+fdCorner.Parent = fontDropdownFrame
+
+local fdLabel = Instance.new("TextLabel")
+fdLabel.Parent = fontDropdownFrame
+fdLabel.Position = UDim2.new(0, 10, 0, 0)
+fdLabel.Size = UDim2.new(0.4, 0, 1, 0)
+fdLabel.BackgroundTransparency = 1
+fdLabel.Text = "Select Font:"
+fdLabel.TextColor3 = Color3.fromRGB(230, 230, 240)
+fdLabel.TextSize = 11
+fdLabel.Font = Enum.Font.GothamBold
+fdLabel.TextXAlignment = Enum.TextXAlignment.Left
+fdLabel.ZIndex = 104
+
+local fdButton = Instance.new("TextButton")
+fdButton.Parent = fontDropdownFrame
+fdButton.AnchorPoint = Vector2.new(1, 0.5)
+fdButton.Position = UDim2.new(1, -8, 0.5, 0)
+fdButton.Size = UDim2.new(0, 140, 0, 22)
+fdButton.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
+fdButton.Text = "Gotham Bold"
+fdButton.TextColor3 = Color3.fromRGB(60, 200, 100)
+fdButton.TextSize = 11
+fdButton.Font = Enum.Font.GothamBold
+fdButton.ZIndex = 104
+
+local fdbCorner = Instance.new("UICorner")
+fdbCorner.CornerRadius = UDim.new(0, 6)
+fdbCorner.Parent = fdButton
+
+fontDropdownList = Instance.new("ScrollingFrame")
+fontDropdownList.Parent = ScreenGui
+fontDropdownList.Size = UDim2.new(0, 140, 0, 140)
+fontDropdownList.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+fontDropdownList.BorderSizePixel = 0
+fontDropdownList.Visible = false
+fontDropdownList.ZIndex = 2000
+fontDropdownList.CanvasSize = UDim2.new(0, 0, 0, 0)
+fontDropdownList.ScrollBarThickness = 3
+
+local fdlCorner = Instance.new("UICorner")
+fdlCorner.CornerRadius = UDim.new(0, 6)
+fdlCorner.Parent = fontDropdownList
+
+local fdlLayout = Instance.new("UIListLayout")
+fdlLayout.Parent = fontDropdownList
+fdlLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+local fontCount = 0
+for fontName, fontVal in pairs(availableFonts) do
+    fontCount = fontCount + 1
+    local fBtn = Instance.new("TextButton")
+    fBtn.Parent = fontDropdownList
+    fBtn.Size = UDim2.new(1, 0, 0, 26)
+    fBtn.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+    fBtn.Text = fontName
+    fBtn.TextColor3 = Color3.fromRGB(230, 230, 240)
+    fBtn.TextSize = 11
+    fBtn.Font = Enum.Font.GothamBold
+    fBtn.ZIndex = 2001
+    
+    fBtn.MouseButton1Click:Connect(function()
+        fdButton.Text = fontName
+        fontDropdownList.Visible = false
+        activeCustomFont = fontVal
+        updateFontsRecursively(ScreenGui, activeCustomFont)
+    end)
+end
+fontDropdownList.CanvasSize = UDim2.new(0, 0, 0, fontCount * 26)
+
+fdButton.MouseButton1Click:Connect(function()
+    local willBeVisible = not fontDropdownList.Visible
+    closeAllDropdowns()
+    fontDropdownList.Visible = willBeVisible
+    if fontDropdownList.Visible then
+        local absPos = fdButton.AbsolutePosition
+        fontDropdownList.Position = UDim2.new(0, absPos.X, 0, absPos.Y + fdButton.AbsoluteSize.Y + 4)
+    end
+end)
+
+addInput(fontsPage, "Font Width", 11, function(val)
+    for _, child in pairs(ScreenGui:GetDescendants()) do
+        if child:IsA("TextButton") or child:IsA("TextLabel") or child:IsA("TextBox") then
+            child.TextSize = val
+        end
+    end
+end)
+
+addInput(fontsPage, "Font Height", 11, function(val)
+    for _, child in pairs(ScreenGui:GetDescendants()) do
+        if child:IsA("TextButton") or child:IsA("TextLabel") or child:IsA("TextBox") then
+            child.TextSize = val
+        end
+    end
+end)
+
+local availableColors = {
+    ["White"] = Color3.fromRGB(230, 230, 240),
+    ["Green"] = Color3.fromRGB(60, 200, 100),
+    ["Red"] = Color3.fromRGB(255, 60, 60),
+    ["Blue"] = Color3.fromRGB(60, 140, 255),
+    ["Yellow"] = Color3.fromRGB(255, 220, 50),
+    ["Purple"] = Color3.fromRGB(180, 60, 255),
+    ["Pink"] = Color3.fromRGB(255, 105, 180)
+}
+
+local colorDropdownFrame = Instance.new("Frame")
+colorDropdownFrame.Parent = fontsPage
+colorDropdownFrame.Size = UDim2.new(1, -6, 0, 34)
+colorDropdownFrame.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+colorDropdownFrame.ZIndex = 103
+
+local cdCorner = Instance.new("UICorner")
+cdCorner.CornerRadius = UDim.new(0, 6)
+cdCorner.Parent = colorDropdownFrame
+
+local cdLabel = Instance.new("TextLabel")
+cdLabel.Parent = colorDropdownFrame
+cdLabel.Position = UDim2.new(0, 10, 0, 0)
+cdLabel.Size = UDim2.new(0.4, 0, 1, 0)
+cdLabel.BackgroundTransparency = 1
+cdLabel.Text = "Font Color"
+cdLabel.TextColor3 = Color3.fromRGB(230, 230, 240)
+cdLabel.TextSize = 11
+cdLabel.Font = Enum.Font.GothamBold
+cdLabel.TextXAlignment = Enum.TextXAlignment.Left
+cdLabel.ZIndex = 104
+
+local cdButton = Instance.new("TextButton")
+cdButton.Parent = colorDropdownFrame
+cdButton.AnchorPoint = Vector2.new(1, 0.5)
+cdButton.Position = UDim2.new(1, -8, 0.5, 0)
+cdButton.Size = UDim2.new(0, 140, 0, 22)
+cdButton.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
+cdButton.Text = "White"
+cdButton.TextColor3 = Color3.fromRGB(230, 230, 240)
+cdButton.TextSize = 11
+cdButton.Font = Enum.Font.GothamBold
+cdButton.ZIndex = 104
+
+local cdbCorner = Instance.new("UICorner")
+cdbCorner.CornerRadius = UDim.new(0, 6)
+cdbCorner.Parent = cdButton
+
+colorDropdownList = Instance.new("ScrollingFrame")
+colorDropdownList.Parent = ScreenGui
+colorDropdownList.Size = UDim2.new(0, 140, 0, 130)
+colorDropdownList.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+colorDropdownList.BorderSizePixel = 0
+colorDropdownList.Visible = false
+colorDropdownList.ZIndex = 2000
+colorDropdownList.CanvasSize = UDim2.new(0, 0, 0, 0)
+colorDropdownList.ScrollBarThickness = 3
+
+local cdlCorner = Instance.new("UICorner")
+cdlCorner.CornerRadius = UDim.new(0, 6)
+cdlCorner.Parent = colorDropdownList
+
+local cdlLayout = Instance.new("UIListLayout")
+cdlLayout.Parent = colorDropdownList
+cdlLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+local colorCount = 0
+for colorName, colorVal in pairs(availableColors) do
+    colorCount = colorCount + 1
+    local cBtn = Instance.new("TextButton")
+    cBtn.Parent = colorDropdownList
+    cBtn.Size = UDim2.new(1, 0, 0, 26)
+    cBtn.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+    cBtn.Text = colorName
+    cBtn.TextColor3 = colorVal
+    cBtn.TextSize = 11
+    cBtn.Font = Enum.Font.GothamBold
+    cBtn.ZIndex = 2001
+    
+    cBtn.MouseButton1Click:Connect(function()
+        cdButton.Text = colorName
+        cdButton.TextColor3 = colorVal
+        colorDropdownList.Visible = false
+        for _, child in pairs(ScreenGui:GetDescendants()) do
+            if child:IsA("TextButton") or child:IsA("TextLabel") or child:IsA("TextBox") then
+                child.TextColor3 = colorVal
+            end
+        end
+    end)
+end
+colorDropdownList.CanvasSize = UDim2.new(0, 0, 0, colorCount * 26)
+
+cdButton.MouseButton1Click:Connect(function()
+    local willBeVisible = not colorDropdownList.Visible
+    closeAllDropdowns()
+    colorDropdownList.Visible = willBeVisible
+    if colorDropdownList.Visible then
+        local absPos = cdButton.AbsolutePosition
+        colorDropdownList.Position = UDim2.new(0, absPos.X, 0, absPos.Y + cdButton.AbsoluteSize.Y + 4)
+    end
+end)
+
+----------------------------------------------------
+-- 8. Script Core Logic & Combat Features
+----------------------------------------------------
+addToggle(uiPage, "Lock UI", function(state) uiLocked = state end)
+
+addButton(combatPage, "Get Gun", function()
+    grabGun()
+end)
+
+local aimlockEnabled = false
+addToggle(combatPage, "Aimlock", function(state)
+    aimlockEnabled = state
+    if not state then Camera.CameraType = Enum.CameraType.Custom end
+end)
+
+addInput(combatPage, "Aimlock Speed", 0.25, function(val)
+    getgenv().TryAimSettings.AimlockSpeed = val
+end)
+
+addInput(combatPage, "Prediction Speed", 0.135, function(val)
+    getgenv().TryAimSettings.PredictionSpeed = val
+end)
+
+local killAllMurderEnabled = false
+addToggle(combatPage, "Kill All [Murder Only]", function(state) 
+    killAllMurderEnabled = state 
+end)
+
+task.spawn(function()
+    while true do
+        task.wait(0.1)
+        if killAllMurderEnabled then
+            local char = LocalPlayer.Character
+            local hrp = char and char:FindFirstChild("HumanoidRootPart")
+            local knife = char and char:FindFirstChild("Knife")
+            
+            if hrp and knife then
+                local originalPos = hrp.CFrame
+                
+                for _, player in ipairs(Players:GetPlayers()) do
+                    if player ~= LocalPlayer and player.Character then
+                        local targetHrp = player.Character:FindFirstChild("HumanoidRootPart")
+                        local targetHum = player.Character:FindFirstChildOfClass("Humanoid")
+                        
+                        if targetHrp and targetHum and targetHum.Health > 0 then
+                            if getRole(player) ~= "Murderer" then
+                                hrp.CFrame = targetHrp.CFrame * CFrame.new(0, 0, 1)
+                                pcall(function()
+                                    knife:Activate()
+                                end)
+                                task.wait(0.01)
+                            end
+                        end
+                    end
+                end
+                
+                if hrp and originalPos then
+                    hrp.CFrame = originalPos
+                end
+            end
+        end
+    end
+end)
+
+addButton(combatPage, "Fling Murderer", function()
+    local murderer = getPlayerByRole("Murderer")
+    if murderer then safeFling(murderer) end
+end)
+
+addButton(combatPage, "Fling Sheriff", function()
+    local sheriff = getPlayerByRole("Sheriff")
+    if sheriff then safeFling(sheriff) end
+end)
+
+local roleEspEnabled = false
+local espHighlights = {}
+addToggle(combatPage, "Role ESP (Highlight)", function(state)
+    roleEspEnabled = state
+    if not state then
+        for _, h in pairs(espHighlights) do if h then h:Destroy() end end
+        table.clear(espHighlights)
+    end
+end)
+
+local coinEspEnabled = false
+local coinHighlights = {}
+addToggle(combatPage, "Coin ESP", function(state)
+    coinEspEnabled = state
+    if not state then
+        for _, h in pairs(coinHighlights) do if h then h:Destroy() end end
+        table.clear(coinHighlights)
+    end
+end)
+
+local gunDropEspEnabled = false
+local gunDropHighlight = nil
+addToggle(combatPage, "Gun Drop ESP", function(state)
+    gunDropEspEnabled = state
+    if not state and gunDropHighlight then
+        gunDropHighlight:Destroy()
+        gunDropHighlight = nil
+    end
+end)
+
+addButton(playerPage, "Teleport to Lobby", function()
+    local char = LocalPlayer.Character
+    local hrp = char and char:FindFirstChild("HumanoidRootPart")
+    if hrp then
+        hrp.CFrame = CFrame.new(0, 100, 0)
+    end
+end)
+
+addButton(playerPage, "Teleport to Murderer", function()
+    local murderer = getPlayerByRole("Murderer")
+    local char = LocalPlayer.Character
+    local hrp = char and char:FindFirstChild("HumanoidRootPart")
+    if murderer and murderer.Character and murderer.Character:FindFirstChild("HumanoidRootPart") and hrp then
+        hrp.CFrame = murderer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+    end
+end)
+
+addButton(playerPage, "Teleport to Gun Drop", function()
+    local char = LocalPlayer.Character
+    local hrp = char and char:FindFirstChild("HumanoidRootPart")
+    if not hrp then return end
+    for _, obj in pairs(Workspace:GetDescendants()) do
+        if obj.Name == "Gun" or obj.Name == "GunDrop" then
+            local targetPart = obj:IsA("BasePart") and obj or obj:FindFirstChildWhichIsA("BasePart")
+            if targetPart then
+                hrp.CFrame = targetPart.CFrame
+                break
+            end
+        end
+    end
+end)
+
+local flyEnabled = false
+local flySpeed = 50
+local flyConnection = nil
+
+addToggle(playerPage, "Fly", function(state)
+    flyEnabled = state
+    local char = LocalPlayer.Character
+    local hrp = char and char:FindFirstChild("HumanoidRootPart")
+    local hum = char and char:FindFirstChildOfClass("Humanoid")
+    
+    if flyEnabled and hrp and hum then
+        hum.PlatformStand = true
+        
+        local bav = Instance.new("BodyVelocity")
+        bav.Name = "TryFlyVel"
+        bav.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+        bav.Velocity = Vector3.new(0, 0, 0)
+        bav.Parent = hrp
+        
+        local bag = Instance.new("BodyGyro")
+        bag.Name = "TryFlyGyro"
+        bag.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+        bag.CFrame = hrp.CFrame
+        bag.Parent = hrp
+        
+        flyConnection = RunService.RenderStepped:Connect(function()
+            if not flyEnabled or not hrp or not hrp.Parent then return end
+            local moveDir = Vector3.new()
+            
+            if UserInputService:IsKeyDown(Enum.KeyCode.W) then moveDir = moveDir + Camera.CFrame.LookVector end
+            if UserInputService:IsKeyDown(Enum.KeyCode.S) then moveDir = moveDir - Camera.CFrame.LookVector end
+            if UserInputService:IsKeyDown(Enum.KeyCode.A) then moveDir = moveDir - Camera.CFrame.RightVector end
+            if UserInputService:IsKeyDown(Enum.KeyCode.D) then moveDir = moveDir + Camera.CFrame.RightVector end
+            if UserInputService:IsKeyDown(Enum.KeyCode.Space) then moveDir = moveDir + Vector3.new(0, 1, 0) end
+            if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then moveDir = moveDir - Vector3.new(0, 1, 0) end
+            
+            bav.Velocity = moveDir * flySpeed
+            bag.CFrame = Camera.CFrame
+        end)
+    else
+        if flyConnection then flyConnection:Disconnect() end
+        local c = LocalPlayer.Character
+        local h = c and c:FindFirstChild("HumanoidRootPart")
+        local hm = c and c:FindFirstChildOfClass("Humanoid")
+        if h then
+            if h:FindFirstChild("TryFlyVel") then h.TryFlyVel:Destroy() end
+            if h:FindFirstChild("TryFlyGyro") then h.TryFlyGyro:Destroy() end
+        end
+        if hm then hm.PlatformStand = false end
+    end
+end)
+
+addInput(playerPage, "Fly Speed", 50, function(val) flySpeed = val end)
+
+local noclipEnabled = false
+addToggle(playerPage, "Noclip", function(state) noclipEnabled = state end)
+addToggle(playerPage, "Anti Fling", function(state) antiFlingEnabled = state end)
+
+local speedGlitchEnabled = false
+local speedGlitchPower = 2.5
+addToggle(playerPage, "Speed Glitch", function(state)
+    speedGlitchEnabled = state
+end)
+addInput(playerPage, "Speed Glitch Power", 2.5, function(val)
+    speedGlitchPower = val
+end)
+
+local spinbotEnabled = false
+local spinbotSpeed = 50
+addToggle(playerPage, "Spinbot", function(state) spinbotEnabled = state end)
+addInput(playerPage, "Spin Speed", 50, function(val) spinbotSpeed = val end)
+
+----------------------------------------------------
+-- TROLL FUN TAB
+----------------------------------------------------
+local selectedTargetName = ""
+local playerDropdownFrame = Instance.new("Frame")
+playerDropdownFrame.Parent = trollPage
+playerDropdownFrame.Size = UDim2.new(1, -6, 0, 34)
+playerDropdownFrame.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+playerDropdownFrame.ZIndex = 103
+
+local pdCorner = Instance.new("UICorner")
+pdCorner.CornerRadius = UDim.new(0, 6)
+pdCorner.Parent = playerDropdownFrame
+
+local pdLabel = Instance.new("TextLabel")
+pdLabel.Parent = playerDropdownFrame
+pdLabel.Position = UDim2.new(0, 10, 0, 0)
+pdLabel.Size = UDim2.new(0.4, 0, 1, 0)
+pdLabel.BackgroundTransparency = 1
+pdLabel.Text = "Target Player:"
+pdLabel.TextColor3 = Color3.fromRGB(230, 230, 240)
+pdLabel.TextSize = 11
+pdLabel.Font = Enum.Font.GothamBold
+pdLabel.TextXAlignment = Enum.TextXAlignment.Left
+pdLabel.ZIndex = 104
+
+local pdButton = Instance.new("TextButton")
+pdButton.Parent = playerDropdownFrame
+pdButton.AnchorPoint = Vector2.new(1, 0.5)
+pdButton.Position = UDim2.new(1, -8, 0.5, 0)
+pdButton.Size = UDim2.new(0, 140, 0, 22)
+pdButton.BackgroundColor3 = Color3.fromRGB(32, 32, 42)
+pdButton.Text = "Select Player..."
+pdButton.TextColor3 = Color3.fromRGB(180, 180, 190)
+pdButton.TextSize = 11
+pdButton.Font = Enum.Font.GothamBold
+pdButton.ZIndex = 104
+
+local pdbCorner = Instance.new("UICorner")
+pdbCorner.CornerRadius = UDim.new(0, 4)
+pdbCorner.Parent = pdButton
+
+dropdownList = Instance.new("ScrollingFrame")
+dropdownList.Parent = ScreenGui
+dropdownList.Size = UDim2.new(0, 140, 0, 120)
+dropdownList.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+dropdownList.BorderSizePixel = 0
+dropdownList.Visible = false
+dropdownList.ZIndex = 2000
+dropdownList.CanvasSize = UDim2.new(0, 0, 0, 0)
+dropdownList.ScrollBarThickness = 3
+
+local dlCorner = Instance.new("UICorner")
+dlCorner.CornerRadius = UDim.new(0, 6)
+dlCorner.Parent = dropdownList
+
+local dlLayout = Instance.new("UIListLayout")
+dlLayout.Parent = dropdownList
+dlLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+local function updatePlayerList()
+    for _, child in pairs(dropdownList:GetChildren()) do
+        if child:IsA("TextButton") then child:Destroy() end
+    end
+    local count = 0
+    for _, p in pairs(Players:GetPlayers()) do
+        if p ~= LocalPlayer then
+            count = count + 1
+            local pBtn = Instance.new("TextButton")
+            pBtn.Parent = dropdownList
+            pBtn.Size = UDim2.new(1, 0, 0, 24)
+            pBtn.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+            pBtn.Text = p.Name
+            pBtn.TextColor3 = Color3.fromRGB(230, 230, 240)
+            pBtn.TextSize = 11
+            pBtn.Font = Enum.Font.GothamBold
+            pBtn.ZIndex = 2001
+            pBtn.MouseButton1Click:Connect(function()
+                selectedTargetName = p.Name
+                pdButton.Text = p.Name
+                pdButton.TextColor3 = Color3.fromRGB(60, 200, 100)
+                dropdownList.Visible = false
+            end)
+        end
+    end
+    dropdownList.CanvasSize = UDim2.new(0, 0, 0, count * 24)
+end
+
+pdButton.MouseButton1Click:Connect(function()
+    updatePlayerList()
+    local willBeVisible = not dropdownList.Visible
+    closeAllDropdowns()
+    dropdownList.Visible = willBeVisible
+    if dropdownList.Visible then
+        local absPos = pdButton.AbsolutePosition
+        dropdownList.Position = UDim2.new(0, absPos.X, 0, absPos.Y + pdButton.AbsoluteSize.Y + 4)
+    end
+end)
+
+Players.PlayerAdded:Connect(updatePlayerList)
+Players.PlayerRemoving:Connect(updatePlayerList)
+
+local bangSpeed = 15
+addInput(trollPage, "Bang Speed", 15, function(val) bangSpeed = val end)
+
+local bangActive = false
+addToggle(trollPage, "Bang", function(state)
+    bangActive = state
+    if state then
+        task.spawn(function()
+            local ticker = 0
+            while bangActive do
+                RunService.RenderStepped:Wait()
+                local target = Players:FindFirstChild(selectedTargetName)
+                local char = LocalPlayer.Character
+                if target and target.Character and char then
+                    local tHrp = target.Character:FindFirstChild("HumanoidRootPart")
+                    local hrp = char:FindFirstChild("HumanoidRootPart")
+                    if tHrp and hrp then
+                        ticker = ticker + (bangSpeed * 0.05)
+                        local offsetVal = math.sin(ticker) * 0.8
+                        hrp.CFrame = tHrp.CFrame * CFrame.new(0, 0, 1.2 + offsetVal)
+                        hrp.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+local jerkOffGiven = false
+addButton(trollPage, "Give Jerk off Tool", function()
+    if jerkOffGiven then return end
+    jerkOffGiven = true
+    pcall(function()
+        local char = LocalPlayer.Character
+        local humanoid = char and char:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            if humanoid.RigType == Enum.HumanoidRigType.R15 then
+                loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
+            else
+                loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-jerk-off-25958"))()
+            end
+        end
+    end)
+end)
+
+----------------------------------------------------
+-- GUI SCALES
+----------------------------------------------------
+addInput(miscPage, "Gui scale", 100, function(val) MainScale.Scale = val / 100 end)
+addInput(miscPage, "Hud scale", 100, function(val) HUDScale.Scale = val / 100 end)
+
+----------------------------------------------------
+-- 9. Screen Quick Buttons
+----------------------------------------------------
+local function createAimlockScreenButton(defaultPos)
+    local btn = Instance.new("TextButton")
+    btn.Name = "Screen_Aimlock"
+    btn.Parent = ScreenGui
+    btn.Position = defaultPos
+    btn.Size = UDim2.new(0, 110, 0, 32)
+    btn.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+    btn.Text = "Aimlock"
+    btn.TextColor3 = Color3.fromRGB(230, 230, 240)
+    btn.TextSize = 11
+    btn.Font = Enum.Font.GothamBold
+    btn.Visible = false
+    btn.ZIndex = 500
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = Color3.fromRGB(45, 45, 60)
+    stroke.Thickness = 1
+    stroke.Parent = btn
+
+    makeDraggable(btn, function() return uiLocked end)
+    btn.MouseButton1Click:Connect(function()
+        aimlockEnabled = not aimlockEnabled
+        btn.BackgroundColor3 = aimlockEnabled and Color3.fromRGB(50, 160, 90) or Color3.fromRGB(25, 25, 35)
+        if not aimlockEnabled then Camera.CameraType = Enum.CameraType.Custom end
+    end)
+
+    addToggle(uiPage, "Aimlock Button", function(state) btn.Visible = state end)
+    return btn
+end
+
+local function createQuickActionScreenButton(name, defaultPos, actionCallback)
+    local btn = Instance.new("TextButton")
+    btn.Name = "Screen_" .. name
+    btn.Parent = ScreenGui
+    btn.Position = defaultPos
+    btn.Size = UDim2.new(0, 110, 0, 32)
+    btn.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+    btn.Text = name
+    btn.TextColor3 = Color3.fromRGB(230, 230, 240)
+    btn.TextSize = 11
+    btn.Font = Enum.Font.GothamBold
+    btn.Visible = false
+    btn.ZIndex = 500
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = Color3.fromRGB(45, 45, 60)
+    stroke.Thickness = 1
+    stroke.Parent = btn
+
+    makeDraggable(btn, function() return uiLocked end)
+    btn.MouseButton1Click:Connect(function()
+        btn.BackgroundColor3 = Color3.fromRGB(50, 160, 90)
+        task.spawn(function()
+            pcall(function()
+                actionCallback()
+            end)
+            task.wait(0.3)
+            btn.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+        end)
+    end)
+
+    addToggle(uiPage, name .. " Button", function(state) btn.Visible = state end)
+    return btn
+end
+
+createAimlockScreenButton(UDim2.new(0.8, 0, 0.32, 0))
+
+createQuickActionScreenButton("Shot Murder", UDim2.new(0.8, 0, 0.4, 0), function()
+    local murderer = getPlayerByRole("Murderer")
+    local char = LocalPlayer.Character
+    if not char or not char:FindFirstChild("HumanoidRootPart") then return end
+    local backpack = LocalPlayer:FindFirstChild("Backpack")
+    local gun = char:FindFirstChild("Gun") or (backpack and backpack:FindFirstChild("Gun"))
+    if not gun then return end
+    if gun.Parent ~= char then
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if hum then hum:EquipTool(hum) else gun.Parent = char end
+        task.wait(0.05)
+    end
+    if murderer and murderer.Character and murderer.Character:FindFirstChild("HumanoidRootPart") then
+        local mHrp = murderer.Character.HumanoidRootPart
+        local targetPos = mHrp.Position + (mHrp.Velocity * getgenv().TryAimSettings.PredictionSpeed)
+        Camera.CFrame = CFrame.new(Camera.CFrame.Position, targetPos)
+        char.HumanoidRootPart.CFrame = CFrame.new(char.HumanoidRootPart.Position, Vector3.new(targetPos.X, char.HumanoidRootPart.Position.Y, targetPos.Z))
+        task.spawn(function() gun:Activate() end)
+    end
+end)
+
+createQuickActionScreenButton("Fling Murder", UDim2.new(0.8, 0, 0.48, 0), function()
+    local murderer = getPlayerByRole("Murderer")
+    if murderer then safeFling(murderer) end
+end)
+
+createQuickActionScreenButton("Fling Sheriff", UDim2.new(0.8, 0, 0.56, 0), function()
+    local sheriff = getPlayerByRole("Sheriff")
+    if sheriff then safeFling(sheriff) end
+end)
+
+createQuickActionScreenButton("Get Gun", UDim2.new(0.8, 0, 0.64, 0), function()
+    grabGun()
+end)
+
+----------------------------------------------------
+-- 10. CONFIGS & KEYS
+----------------------------------------------------
+local function getSaveData()
+    local data = {}
+    for name, state in pairs(toggleStates) do data[name] = state end
+    return data
+end
+
+local function applySaveData(data)
+    for name, state in pairs(data) do
+        if toggleCallbacks[name] then toggleCallbacks[name](state) end
+    end
+end
+
+local function generateKey(data)
+    local json = HttpService:JSONEncode(data)
+    local base64 = crypt and crypt.base64encode and crypt.base64encode(json) or json
+    return "Tryscript_" .. base64
+end
+
+local function decodeKey(key)
+    local raw = key:gsub("Tryscript_", "")
+    local json = crypt and crypt.base64decode and crypt.base64decode(raw) or raw
+    local success, res = pcall(function() return HttpService:JSONDecode(json) end)
+    return success and res or nil
+end
+
+local configNameBox = Instance.new("TextBox")
+configNameBox.Parent = configsPage
+configNameBox.Size = UDim2.new(1, -6, 0, 32)
+configNameBox.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+configNameBox.Text = ""
+configNameBox.PlaceholderText = "Config Name..."
+configNameBox.TextColor3 = Color3.fromRGB(230, 230, 240)
+configNameBox.TextSize = 11
+configNameBox.Font = Enum.Font.GothamBold
+configNameBox.ZIndex = 103
+
+local cCorner = Instance.new("UICorner")
+cCorner.CornerRadius = UDim.new(0, 6)
+cCorner.Parent = configNameBox
+
+local btnFrame = Instance.new("Frame")
+btnFrame.Parent = configsPage
+btnFrame.Size = UDim2.new(1, -6, 0, 32)
+btnFrame.BackgroundTransparency = 1
+btnFrame.ZIndex = 103
+
+local function createConfigBtn(text, color, pos, size, callback)
+    local btn = Instance.new("TextButton")
+    btn.Parent = btnFrame
+    btn.Position = pos
+    btn.Size = size
+    btn.BackgroundColor3 = color
+    btn.Text = text
+    btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    btn.TextSize = 11
+    btn.Font = Enum.Font.GothamBold
+    btn.ZIndex = 104
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+    btn.MouseButton1Click:Connect(callback)
+    return btn
+end
+
+local keyBox = Instance.new("TextBox")
+keyBox.Parent = configsPage
+keyBox.Size = UDim2.new(1, -6, 0, 32)
+keyBox.BackgroundColor3 = Color3.fromRGB(22, 22, 28)
+keyBox.Text = ""
+keyBox.PlaceholderText = "Config Key..."
+keyBox.TextColor3 = Color3.fromRGB(180, 180, 190)
+keyBox.TextSize = 11
+keyBox.Font = Enum.Font.GothamBold
+keyBox.ZIndex = 103
+
+local KeyCorner = Instance.new("UICorner")
+KeyCorner.CornerRadius = UDim.new(0, 6)
+KeyCorner.Parent = keyBox
+
+local keyBtnFrame = Instance.new("Frame")
+keyBtnFrame.Parent = configsPage
+keyBtnFrame.Size = UDim2.new(1, -6, 0, 32)
+keyBtnFrame.BackgroundTransparency = 1
+keyBtnFrame.ZIndex = 103
+
+local function createKeyBtn(text, color, pos, size, callback)
+    local btn = Instance.new("TextButton")
+    btn.Parent = keyBtnFrame
+    btn.Position = pos
+    btn.Size = size
+    btn.BackgroundColor3 = color
+    btn.Text = text
+    btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    btn.TextSize = 10
+    btn.Font = Enum.Font.GothamBold
+    btn.ZIndex = 104
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+    btn.MouseButton1Click:Connect(callback)
+    return btn
+end
+
+createConfigBtn("Save", Color3.fromRGB(50, 160, 90), UDim2.new(0, 0, 0, 0), UDim2.new(0.31, 0, 1, 0), function()
+    local name = configNameBox.Text
+    if name ~= "" then configData[name] = getSaveData() configNameBox.Text = name end
+end)
+createConfigBtn("Load", Color3.fromRGB(60, 120, 200), UDim2.new(0.345, 0, 0, 0), UDim2.new(0.31, 0, 1, 0), function()
+    local name = configNameBox.Text
+    if configData[name] then applySaveData(configData[name]) end
+end)
+createConfigBtn("Delete", Color3.fromRGB(200, 60, 60), UDim2.new(0.69, 0, 0, 0), UDim2.new(0.31, 0, 1, 0), function()
+    local name = configNameBox.Text
+    if configData[name] then configData[name] = nil configNameBox.Text = "" keyBox.Text = "" end
+end)
+
+createKeyBtn("Create Key", Color3.fromRGB(120, 60, 200), UDim2.new(0, 0, 0, 0), UDim2.new(0.31, 0, 1, 0), function()
+    local name = configNameBox.Text
+    local data = configData[name] or getSaveData()
+    keyBox.Text = generateKey(data)
+end)
+createKeyBtn("Copy", Color3.fromRGB(50, 120, 200), UDim2.new(0.345, 0, 0, 0), UDim2.new(0.31, 0, 1, 0), function()
+    if setclipboard and keyBox.Text ~= "" then setclipboard(keyBox.Text) end
+end)
+createKeyBtn("Import", Color3.fromRGB(200, 120, 40), UDim2.new(0.69, 0, 0, 0), UDim2.new(0.31, 0, 1, 0), function()
+    local key = keyBox.Text
+    local decodedData = decodeKey(key)
+    if decodedData then applySaveData(decodedData) keyBox.Text = "Imported!" end
+end)
+
+----------------------------------------------------
+-- 11. Main Loops & Esp Renderers
+----------------------------------------------------
+local cachedMurderer = nil
+task.spawn(function()
+    while true do
+        task.wait(0.5)
+        local success, m = pcall(function() return getPlayerByRole("Murderer") end)
+        if success then cachedMurderer = m end
+    end
+end)
+
+RunService.RenderStepped:Connect(function()
+    local char = LocalPlayer.Character
+    if not char then return end
+    local hrp = char:FindFirstChild("HumanoidRootPart")
+    local hum = char:FindFirstChildOfClass("Humanoid")
+
+    local isHoldingGun = char:FindFirstChild("Gun") ~= nil
+    if aimlockEnabled and isHoldingGun then
+        if cachedMurderer and cachedMurderer.Character and cachedMurderer.Character:FindFirstChild("HumanoidRootPart") then
+            local targetHrp = cachedMurderer.Character.HumanoidRootPart
+            local basePos = targetHrp.Position
+            
+            local velocity = targetHrp.AssemblyLinearVelocity
+            local predSpeed = getgenv().TryAimSettings.PredictionSpeed
+            local aimSpeed = getgenv().TryAimSettings.AimlockSpeed
+            
+            local predictionOffset = Vector3.new(velocity.X * predSpeed, 0, velocity.Z * predSpeed)
+            local verticalOffset = Vector3.new(0, math.clamp(velocity.Y * (predSpeed * 0.6), -1.5, 1.5), 0)
+            
+            local finalTargetPos = basePos + predictionOffset + verticalOffset
+            local targetCFrame = CFrame.new(Camera.CFrame.Position, finalTargetPos)
+            
+            Camera.CFrame = Camera.CFrame:Lerp(targetCFrame, aimSpeed)
+        end
+    end
+
+    if speedGlitchEnabled and hrp and hum and hum.MoveDirection.Magnitude > 0 then
+        local state = hum:GetState()
+        local isInAir = (state == Enum.HumanoidStateType.Freefall or state == Enum.HumanoidStateType.Jumping)
+        if isInAir then
+            hrp.CFrame = hrp.CFrame + (hum.MoveDirection * speedGlitchPower * 0.1)
+        end
+    end
+
+    if noclipEnabled then
+        local c = LocalPlayer.Character
+        if c then
+            for _, part in pairs(c:GetDescendants()) do
+                if part:IsA("BasePart") then part.CanCollide = false end
+            end
+        end
+    end
+
+    if spinbotEnabled and hrp then
+        hrp.CFrame = hrp.CFrame * CFrame.Angles(0, math.rad(spinbotSpeed), 0)
+    end
+
+    if antiFlingEnabled then
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= LocalPlayer and p.Character then
+                for _, part in pairs(p.Character:GetDescendants()) do
+                    if part:IsA("BasePart") then part.CanCollide = false end
+                end
+            end
+        end
+    end
+
+    if roleEspEnabled then
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= LocalPlayer and player.Character then
+                local role = getRole(player)
+                local highlight = espHighlights[player]
+                if not highlight or highlight.Parent ~= player.Character then
+                    if highlight then highlight:Destroy() end
+                    highlight = Instance.new("Highlight")
+                    highlight.Parent = player.Character
+                    highlight.Adornee = player.Character
+                    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                    espHighlights[player] = highlight
+                end
+                highlight.FillColor = getRoleColor(role)
+                highlight.FillTransparency = 0.4
+            end
+        end
+    end
+
+    if coinEspEnabled then
+        for _, obj in pairs(Workspace:GetDescendants()) do
+            if obj.Name == "CoinContainer" or obj.Name == "Coin" or obj.Name:find("Coin") then
+                local part = obj:IsA("BasePart") and obj or obj:FindFirstChildWhichIsA("BasePart")
+                if part then
+                    local highlight = coinHighlights[obj]
+                    if not highlight or highlight.Parent ~= part then
+                        if highlight then highlight:Destroy() end
+                        highlight = Instance.new("Highlight")
+                        highlight.Parent = part
+                        highlight.Adornee = part
+                        highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                        highlight.FillColor = Color3.fromRGB(255, 215, 0)
+                        highlight.FillTransparency = 0.3
+                        coinHighlights[obj] = highlight
+                    end
+                end
+            end
+        end
+    else
+        for _, h in pairs(coinHighlights) do if h then h:Destroy() end end
+        table.clear(coinHighlights)
+    end
+
+    if gunDropEspEnabled then
+        local gunFound = false
+        for _, obj in pairs(Workspace:GetDescendants()) do
+            if obj.Name == "Gun" or obj.Name == "GunDrop" then
+                local part = obj:IsA("BasePart") and obj or obj:FindFirstChildWhichIsA("BasePart")
+                if part then
+                    gunFound = true
+                    if not gunDropHighlight or gunDropHighlight.Parent ~= part then
+                        if gunDropHighlight then gunDropHighlight:Destroy() end
+                        gunDropHighlight = Instance.new("Highlight")
+                        gunDropHighlight.Parent = part
+                        gunDropHighlight.Adornee = part
+                        gunDropHighlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+                        gunDropHighlight.FillColor = Color3.fromRGB(0, 191, 255)
+                        gunDropHighlight.FillTransparency = 0.2
+                    end
+                    break
+                end
+            end
+        end
+        if not gunFound and gunDropHighlight then
+            gunDropHighlight:Destroy()
+            gunDropHighlight = nil
+        end
+    else
+        if gunDropHighlight then
+            gunDropHighlight:Destroy()
+            gunDropHighlight = nil
+        end
+    end
+end)
